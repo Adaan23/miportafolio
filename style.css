@@ -1,13 +1,13 @@
 :root {
-    --bg-dark: #0f172a; /* Slate 900 */
-    --card-bg: rgba(30, 41, 59, 0.6); /* Slate 800 with opacity */
-    --text-primary: #f8fafc; /* Slate 50 */
-    --text-secondary: #cbd5e1; /* Slate 300 */
-    --accent-cyan: #06b6d4; /* Cyan 500 */
-    --accent-purple: #8b5cf6; /* Violet 500 */
+    --fondo-oscuro: #0f172a; /* Pizarra 900 */
+    --fondo-tarjeta: rgba(30, 41, 59, 0.6); /* Pizarra 800 con opacidad */
+    --texto-principal: #f8fafc; /* Pizarra 50 */
+    --texto-secundario: #cbd5e1; /* Pizarra 300 */
+    --acento-cian: #06b6d4; /* Cian 500 */
+    --acento-morado: #8b5cf6; /* Violeta 500 */
     
-    --glow-cyan: rgba(6, 182, 212, 0.4);
-    --glow-purple: rgba(139, 92, 246, 0.4);
+    --brillo-cian: rgba(6, 182, 212, 0.4);
+    --brillo-morado: rgba(139, 92, 246, 0.4);
 }
 
 * {
@@ -17,8 +17,8 @@
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-primary);
+    background-color: var(--fondo-oscuro);
+    color: var(--texto-principal);
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
@@ -26,42 +26,42 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Background Animated Shapes for Glassmorphism Context */
-.bg-shape {
+/* Formas de fondo animadas para el diseño tipo cristal */
+.forma-fondo {
     position: absolute;
     border-radius: 50%;
     filter: blur(100px);
     z-index: -1;
     opacity: 0.6;
-    animation: drift 20s infinite alternate ease-in-out;
+    animation: deriva 20s infinite alternate ease-in-out;
 }
 
-.shape-1 {
+.forma-1 {
     width: 40vw; height: 40vw;
-    background: var(--glow-cyan);
+    background: var(--brillo-cian);
     top: -10vw; left: -10vw;
 }
-.shape-2 {
+.forma-2 {
     width: 30vw; height: 30vw;
-    background: var(--glow-purple);
+    background: var(--brillo-morado);
     bottom: 10vw; right: -5vw;
     animation-delay: -5s;
 }
-.shape-3 {
+.forma-3 {
     width: 25vw; height: 25vw;
-    background: rgba(14, 165, 233, 0.3); /* Sky Blue */
+    background: rgba(14, 165, 233, 0.3); /* Azul cielo */
     top: 50%; left: 40%;
     transform: translate(-50%, -50%);
     animation-delay: -10s;
 }
 
-@keyframes drift {
+@keyframes deriva {
     0% { transform: translate(0, 0) scale(1); }
     100% { transform: translate(10vw, 5vh) scale(1.1); }
 }
 
-/* Main Container */
-.app-container {
+/* Contenedor principal */
+.contenedor-app {
     max-width: 1000px;
     margin: 0 auto;
     padding: 2rem;
@@ -69,9 +69,9 @@ body {
     z-index: 10;
 }
 
-/* Glassmorphism Classes */
-.glass-card {
-    background: var(--card-bg);
+/* Clases de efecto cristal (Glassmorphism) */
+.tarjeta-cristal {
+    background: var(--fondo-tarjeta);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -81,28 +81,28 @@ body {
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.glass-card:hover {
+.tarjeta-cristal:hover {
     transform: translateY(-5px);
     border-color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Typography & Colors */
-.gradient-text {
-    background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple));
+/* Tipografía y colores */
+.texto-degradado {
+    background: linear-gradient(to right, var(--acento-cian), var(--acento-morado));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     display: inline-block;
 }
 
-.text-cyan { color: var(--accent-cyan); }
-.text-purple { color: var(--accent-purple); }
-.text-white { color: #fff; }
-.text-red { color: #ef4444; }
-.text-gray { color: #94a3b8; }
+.texto-cian { color: var(--acento-cian); }
+.texto-morado { color: var(--acento-morado); }
+.texto-blanco { color: #fff; }
+.texto-rojo { color: #ef4444; }
+.texto-gris { color: #94a3b8; }
 
-.section-title {
+.titulo-seccion {
     font-size: 2rem;
     font-weight: 800;
     margin-bottom: 2rem;
@@ -110,8 +110,8 @@ body {
     letter-spacing: -0.5px;
 }
 
-/* Hero Section */
-.hero {
+/* Sección de portada (Hero) */
+.portada {
     margin-top: 4rem;
     margin-bottom: 5rem;
     text-align: center;
@@ -124,26 +124,26 @@ h1 {
     letter-spacing: -1px;
 }
 
-.subtitle {
+.subtitulo {
     font-size: 1.5rem;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-weight: 400;
     margin-bottom: 3rem;
 }
 
-.hero-content {
+.contenido-portada {
     max-width: 800px;
     margin: 0 auto;
     font-size: 1.1rem;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
 }
 
-.highlight {
-    color: var(--text-primary);
+.destacado {
+    color: var(--texto-principal);
     font-weight: 600;
 }
 
-.hero-actions {
+.acciones-portada {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -151,8 +151,8 @@ h1 {
     margin-top: 2rem;
 }
 
-/* Buttons */
-.btn {
+/* Botones */
+.boton {
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
     font-weight: 600;
@@ -165,38 +165,41 @@ h1 {
     gap: 0.5rem;
 }
 
-.btn-primary {
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+.boton-principal {
+    background: linear-gradient(135deg, var(--acento-cian), var(--acento-morado));
     color: white;
     border: none;
-    box-shadow: 0 4px 15px var(--glow-cyan);
+    box-shadow: 0 4px 15px var(--brillo-cian);
 }
 
-.btn-primary:hover {
-    box-shadow: 0 6px 20px var(--glow-purple);
+.boton-principal:hover {
+    box-shadow: 0 6px 20px var(--brillo-morado);
     transform: translateY(-2px);
 }
 
-.btn-secondary {
+.boton-secundario {
     background: transparent;
-    color: var(--text-primary);
+    color: var(--texto-principal);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.btn-secondary:hover {
+.boton-secundario:hover {
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Skills section */
-.skills-grid {
+/* Sección de habilidades */
+.seccion-habilidades {
+    margin-bottom: 2rem;
+}
+.cuadricula-habilidades {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-bottom: 5rem;
 }
 
-.skill-group h4 {
+.grupo-habilidad h4 {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
@@ -206,39 +209,99 @@ h1 {
     gap: 0.8rem;
 }
 
-.icon-list {
+.lista-iconos {
     list-style: none;
 }
 
-.icon-list li {
+.lista-iconos li {
     display: flex;
     align-items: center;
     gap: 1.2rem;
     margin-bottom: 1.2rem;
     font-weight: 500;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     transition: color 0.2s ease;
 }
 
-.icon-list li:hover {
-    color: var(--text-primary);
+.lista-iconos li:hover {
+    color: var(--texto-principal);
 }
 
-.icon-list i, .icon-list [class^="devicon-"] {
+.lista-iconos i, .lista-iconos [class^="devicon-"] {
     font-size: 1.5rem;
     width: 30px;
     text-align: center;
 }
 
-/* Timeline */
-.timeline {
+/* Sección de Proyectos Personales (Nueva) */
+.seccion-proyectos {
+    margin-bottom: 5rem;
+}
+
+.cuadricula-proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.tarjeta-proyecto {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-top: 3px solid var(--acento-cian); /* Un detalle de diseño en la parte superior */
+}
+
+.proyecto-cabecera h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.etiquetas-tecnologia {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.etiquetas-tecnologia span {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--texto-secundario);
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+}
+
+.etiquetas-tecnologia span:hover {
+    color: var(--texto-principal);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(6, 182, 212, 0.4);
+}
+
+.proyecto-contenido p {
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.proyecto-contenido strong {
+    color: var(--texto-principal);
+    font-weight: 500;
+}
+
+/* Línea de tiempo (Trayectoria) */
+.linea-tiempo {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     margin-bottom: 5rem;
 }
 
-.card-header {
+.cabecera-tarjeta {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -246,79 +309,79 @@ h1 {
     font-size: 0.9rem;
 }
 
-.date {
-    color: var(--text-secondary);
+.fecha {
+    color: var(--texto-secundario);
     display: flex;
     align-items: center;
     gap: 0.4rem;
 }
 
-.role-badge {
+.etiqueta-rol {
     background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(139, 92, 246, 0.2));
-    border: 1px solid var(--accent-cyan);
-    color: var(--accent-cyan);
+    border: 1px solid var(--acento-cian);
+    color: var(--acento-cian);
     padding: 0.2rem 0.8rem;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
 }
 
-.feature-card {
+.tarjeta-destacada {
     border: 1px solid rgba(6, 182, 212, 0.3);
     box-shadow: 0 10px 30px rgba(6, 182, 212, 0.1);
     background: linear-gradient(180deg, rgba(30,41,59,0.8) 0%, rgba(30,41,59,0.4) 100%);
 }
 
-.feature-card h4 {
+.tarjeta-destacada h4 {
     font-size: 1.4rem;
     margin-bottom: 0.8rem;
 }
 
-.company-text {
-    color: var(--text-secondary);
+.texto-empresa {
+    color: var(--texto-secundario);
     font-weight: 400;
 }
 
-.secondary-card {
+.tarjeta-secundaria {
     padding: 1.5rem;
     background: rgba(30, 41, 59, 0.3);
 }
 
-.secondary-card h4 {
+.tarjeta-secundaria h4 {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
 }
 
-.reduced-text {
-    color: #64748b; /* Slate 500 */
+.texto-reducido {
+    color: #64748b; /* Pizarra 500 */
     font-size: 0.95rem;
 }
 
-/* Scroll Animations */
-.scroll-animate {
+/* Animaciones al hacer scroll */
+.animar-scroll {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.scroll-animate.visible {
+.animar-scroll.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Footer */
+/* Pie de página */
 footer {
     text-align: center;
     padding: 2rem 0;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 0.9rem;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Responsive */
+/* Responsividad */
 @media (max-width: 768px) {
     h1 { font-size: 2.5rem; }
-    .hero-actions { flex-direction: column; }
-    .card-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-    .glass-card { padding: 1.5rem; }
+    .acciones-portada { flex-direction: column; }
+    .cabecera-tarjeta { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .tarjeta-cristal { padding: 1.5rem; }
 }

@@ -1,33 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Scroll Animation Observer (Fade In Elements as you scroll)
-    const observerOptions = {
+    // Observador de animaciones al hacer scroll (Aparecer elementos a medida que bajas)
+    const opcionesObservador = {
         root: null,
         rootMargin: '0px',
         threshold: 0.15
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                // Optar por dejar de observar para mejor performance
-                observer.unobserve(entry.target); 
+    const observador = new IntersectionObserver((entradas, observador_instancia) => {
+        entradas.forEach(entrada => {
+            if (entrada.isIntersecting) {
+                entrada.target.classList.add('visible');
+                // Dejamos de observar el elemento para mejorar el rendimiento
+                observador_instancia.unobserve(entrada.target); 
             }
         });
-    }, observerOptions);
+    }, opcionesObservador);
 
-    const animateElements = document.querySelectorAll('.scroll-animate');
-    animateElements.forEach(el => observer.observe(el));
+    const elementosAnimables = document.querySelectorAll('.animar-scroll');
+    elementosAnimables.forEach(elemento => observador.observe(elemento));
     
-    // Add smooth scrolling for header anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
+    // Añadimos scroll suave para los enlaces del menú / navegación
+    document.querySelectorAll('a[href^="#"]').forEach(enlace => {
+        enlace.addEventListener('click', function (evento) {
+            evento.preventDefault();
+            const idDestino = this.getAttribute('href');
+            const elementoDestino = document.querySelector(idDestino);
             
-            if (targetElement) {
-                targetElement.scrollIntoView({
+            if (elementoDestino) {
+                elementoDestino.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
